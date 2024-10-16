@@ -1,19 +1,20 @@
-import React from 'react'
-import { useGetUsersQuery } from './usersApiSlice'
+import { useGetUsersQuery } from "./usersApiSlice"
 import User from './User'
 
-function UserList() {
+const UsersList = () => {
 
     const {
-        data:users,
+        data: users,
         isLoading,
         isSuccess,
         isError,
         error
-    }=useGetUsersQuery(); // Call the hook with parentheses
+    } = useGetUsersQuery(undefined, {
+        pollingInterval: 60000,
+        refetchOnFocus: true,
+        refetchOnMountOrArgChange: true
+    })
 
-    console.log(users)
-    console.log(isSuccess)
     let content
 
     if (isLoading) content = <p>Loading...</p>
@@ -21,6 +22,7 @@ function UserList() {
     if (isError) {
         content = <p className="errmsg">{error?.data?.message}</p>
     }
+
     if (isSuccess) {
 
         const { ids } = users
@@ -44,9 +46,7 @@ function UserList() {
             </table>
         )
     }
-    return (
-        content
-    )
-}
 
-export default UserList
+    return content
+}
+export default UsersList
