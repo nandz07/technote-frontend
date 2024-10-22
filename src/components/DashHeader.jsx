@@ -20,8 +20,8 @@ const DashHeader = () => {
         isError,
         error
     }] = useSendLogoutMutation()
-
     useEffect(() => {
+        console.log(isSuccess)
         if (isSuccess) navigate('/')
     }, [isSuccess, navigate])
 
