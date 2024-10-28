@@ -70,8 +70,8 @@ const PersistLogin = () => {
         console.log('token and uninit')
         console.log(isUninitialized)
         content = <Outlet />
-    }else if(!isSuccess ){
-        // console.log(first)
+    }
+    else if(!isSuccess && !error){
         content = <Outlet />
     }
 
