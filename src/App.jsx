@@ -1,9 +1,7 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Layouts from './layouts/Layouts'
 import Public from './components/public'
 import Login from './features/auth/Login'
-import Sample from './components/Sample'
 import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
 import NotesList from './features/notes/NotesList'
@@ -16,14 +14,15 @@ import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin'
 import { ROLES } from './config/roles'
 import RequireAuth from './features/auth/RequireAuth'
+import Layout from './components/Layout'
 
 function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<Layouts />} >
+      <Route path='/' element={<Layout />} >
         {/* public routes */}
-        <Route path='/sample' element={<Sample />} />
+        {/* <Route path='/sample' element={<Sample />} /> */}
         <Route index element={<Public />} />
         <Route path='login' element={<Login />} />
 

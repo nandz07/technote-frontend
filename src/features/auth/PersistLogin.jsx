@@ -70,9 +70,13 @@ const PersistLogin = () => {
         console.log('token and uninit')
         console.log(isUninitialized)
         content = <Outlet />
-    }
-    else if(!isSuccess && !error){
-        content = <Outlet />
+    } else {
+        content = (
+            <p className='errmsg'>
+                {`${error?.data?.message} - `}
+                <Link to="/login">Please login again</Link>.
+            </p>
+        )
     }
 
     return content
