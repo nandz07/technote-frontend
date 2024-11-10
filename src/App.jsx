@@ -15,9 +15,10 @@ import PersistLogin from './features/auth/PersistLogin'
 import { ROLES } from './config/roles'
 import RequireAuth from './features/auth/RequireAuth'
 import Layout from './components/Layout'
+import useTitle from './hooks/useTitle'
 
 function App() {
-
+useTitle('Tech Notes')
   return (
     <Routes>
       <Route path='/' element={<Layout />} >

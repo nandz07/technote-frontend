@@ -7,9 +7,6 @@ const useAuth = () => {
     let isManager = false
     let isAdmin = false
     let status = "Employee"
-    console.log('========')
-    console.log(token)
-    console.log('=========')
 
     if (token) {
         const decoded = jwtDecode(token)

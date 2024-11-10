@@ -26,7 +26,7 @@ const EditNoteForm = ({ note, users }) => {
 
     const [title, setTitle] = useState(note.title)
     const [text, setText] = useState(note.text)
-    const [completed, setCompleted] = useState(note.completed)
+    const [completed, setCompleted] = useState(note.completed || false)
     const [userId, setUserId] = useState(note.user)
 
     useEffect(() => {
