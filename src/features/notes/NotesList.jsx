@@ -1,9 +1,11 @@
 import { useGetNotesQuery } from "./notesApiSlice"
 import Note from "./Note"
 import useAuth from "../../hooks/useAuth"
+import useTitle from "../../hooks/useTitle"
 
 const NotesList = () => {
 
+    useTitle('techNotes: Notes List')
     const { username, isManager, isAdmin } = useAuth()
 
     const {
