@@ -1,6 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Public from './components/public'
+import Public from './components/Public'
 import Login from './features/auth/Login'
 import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
